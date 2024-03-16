@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx tsc -w & nodemon dist/index.js"
+    "build_docker": "docker build -t qp-assessment:0.0.1.RELEASE .",
+    "run_docker": "docker container run -d -p 3000:3000 qp-assessment:0.0.1.RELEASE",
+    "compile": "tsc && node dist/app.js",
+    "dev": "nodemon -e ts --exec \"npm run compile\""
   },
   "keywords": [],
   "author": "",
