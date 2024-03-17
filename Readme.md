@@ -38,7 +38,8 @@ The Groceries part can be tested using these credentials. Or you can use the Aut
 3. Then make the request
 
 ## Auth Endpoints
-POST localhost:3000/api/v1/auth/create   
+**POST localhost:3000/api/v1/auth/create**   
+   
 Provide the following fields in the request body as JSON object   
 name: string;   
 email: string;   
@@ -46,33 +47,38 @@ password: string;
 passwordConfirm: string;   
 role?: 'USER' | 'ADMIN'; (If not provided, defaults to USER)   
    
-POST localhost:3000/api/v1/auth/login   
+**POST localhost:3000/api/v1/auth/login**   
+   
 Provide the following fields in the request body as JSON object   
 email: string;   
 password: string;   
    
 ## User Endpoints   
-GET localhost:3000/api/v1/users  (Protected, only to admin)   
+**GET localhost:3000/api/v1/users**  (Protected, only to admin)   
     
-GET localhost:3000/api/v1/users/:id  (Protected, only to admin)   
+**GET localhost:3000/api/v1/users/:id**  (Protected, only to admin)   
+   
 id: number; (as request parameter)   
    
 ## Product Endpoints
-GET localhost:3000/api/v1/products   
+**GET localhost:3000/api/v1/products**   
 Get all products   
    
-GET localhost:3000/api/v1/products/:id   
+**GET localhost:3000/api/v1/products/:id**   
+   
 Get a product by its id   
 id: number; (as request parameter)   
    
-PATCH localhost:3000/api/v1/products (Protected, only to admin)   
+**PATCH localhost:3000/api/v1/products** (Protected, only to admin)   
+   
 Provide the following fields in the request body as JSON object   
 title: string;   
 price: number;   
 stock: number;   
 stockUnit: 'NUMBER' | 'KG' | 'LITRE'; (Defaults to NUMBER if not provided)   
    
-POST localhost:3000/api/v1/products/:id (Protected, only to admin)   
+**POST localhost:3000/api/v1/products/:id** (Protected, only to admin)   
+   
 id: number; (as request parameter)   
 Provide the following fields in the request body as JSON object   
 title: string;   
@@ -80,18 +86,21 @@ price: number;
 stock: number;   
 stockUnit: 'NUMBER' | 'KG' | 'LITRE'; (Defaults to NUMBER if not provided)   
    
-DELETE localhost:3000/api/v1/products (Protected, only to admin)   
+**DELETE localhost:3000/api/v1/products** (Protected, only to admin)   
+   
 id: number; (as request parameter)   
    
 ## Orders Endpoints
-GET localhost:3000/api/v1/orders (Protected, only to admin)   
+**GET localhost:3000/api/v1/orders** (Protected, only to admin)   
 Get all orders   
    
-GET localhost:3000/api/v1/orders/:id  (Protected, only to admin)   
+**GET localhost:3000/api/v1/orders/:id**  (Protected, only to admin)   
+   
 Get an order by its id   
 id: number; (as request parameter)   
    
-PATCH localhost:3000/api/v1/orders  (Protected, only to admin)   
+**PATCH localhost:3000/api/v1/orders**  (Protected, only to admin)   
+   
 Provide the following fields in the request body as JSON object or array   
 productId: number;   
 quantity: number;   
@@ -99,7 +108,8 @@ quantityUnit: 'NUMBER' | 'KG' | 'LITRE'; ? (Defaults to NUMBER)
 subtotal: number;   
 userId: number;   
    
-POST localhost:3000/api/v1/orders/:id  (Protected, available to logged in users and admin)   
+**POST localhost:3000/api/v1/orders/:id**  (Protected, available to logged in users and admin)   
+   
 id: number; (as request parameter)   
 Provide the following fields in the request body as JSON object or array   
 productId: number;   
@@ -108,5 +118,6 @@ quantityUnit: 'NUMBER' | 'KG' | 'LITRE'; ? (Defaults to NUMBER)
 subtotal: number;   
 userId: number;   
    
-DELETE localhost:3000/api/v1/orders (Protected, available to logged in users and admin)   
+**DELETE localhost:3000/api/v1/orders** (Protected, available to logged in users and admin)   
+   
 id: number; (as request parameter)   
