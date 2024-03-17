@@ -8,6 +8,6 @@ orderRouter.get('/', protect, restrictTo('ADMIN'), getAll);
 orderRouter.get('/:id', protect, restrictTo('ADMIN'), getById);
 orderRouter.post('/', createOrder);
 orderRouter.delete('/:id', deleteOrder);
-orderRouter.patch('/:id', updateOrder);
+orderRouter.patch('/:id', protect, updateOrder);
 
 export { orderRouter };
