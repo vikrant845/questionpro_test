@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build_docker": "docker build -t qp-assessment:0.0.1.RELEASE .",
-    "run_docker": "docker container run -d -p 3000:3000 qp-assessment:0.0.1.RELEASE",
+    "docker:build": "docker build -t qp-assessment:0.0.1.RELEASE .",
+    "docker:run": "docker container run -d -p 3000:3000 qp-assessment:0.0.1.RELEASE",
     "compile": "tsc && node dist/app.js",
-    "dev": "nodemon -e ts --exec \"npm run compile\""
+    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "prod": "\"npm run compile\""
   },
   "keywords": [],
   "author": "",
