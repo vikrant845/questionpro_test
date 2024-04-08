@@ -11,6 +11,7 @@ import { productRouter } from './routes/product.routes.js';
 import { authRouter } from './routes/auth.routes.js';
 import { usersRouter } from './routes/user.routes.js';
 import { orderRouter } from './routes/order.routes.js';
+import { errorController } from './controllers/error.controller.js';
 
 const __dirname = fileURLToPath(new URL(import.meta.url));
 
@@ -31,6 +32,8 @@ app.use('/api/v1/products', productRouter);
 app.use('/api/v1/orders', orderRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', usersRouter);
+
+app.use(errorController);
 
 app.listen(3000, () => {
   console.log('Listening to 3000');
